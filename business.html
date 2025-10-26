@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finance Tracker - Business View</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>💼 Business Finance Overview</h1>
+    <p>Track business income, expenses, cash flow, and creditors</p>
+  </header>
+
+  <section class="summary-section">
+    <div class="summary-grid">
+      <div class="card" id="businessCash">Cash: ₹0</div>
+      <div class="card" id="businessBank">Bank: ₹0</div>
+      <div class="card" id="businessCredit">Credit: ₹0</div>
+      <div class="card" id="businessTotalExpense">Total Expense: ₹0</div>
+      <div class="card" id="businessTotalIncome">Total Income: ₹0</div>
+    </div>
+  </section>
+
+  <section class="chart-section">
+    <h2>Business Expense Categories</h2>
+    <canvas id="businessChart"></canvas>
+  </section>
+
+  <section class="history-section">
+    <h2>Transaction History</h2>
+    <input type="date" id="businessDateFilter" />
+    <button id="businessSearchBtn">Search</button>
+    <table id="businessTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Category</th>
+          <th>Type</th>
+          <th>Mode</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p>© 2025 Finance Tracker | Business View</p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetchData("Business");
+    });
+  </script>
+</body>
+</html>
