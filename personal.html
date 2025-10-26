@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finance Tracker - Personal View</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🏡 Personal Finance Overview</h1>
+    <p>View all personal income, expenses, and cash balance</p>
+  </header>
+
+  <section class="summary-section">
+    <div class="summary-grid">
+      <div class="card" id="personalCash">Cash: ₹0</div>
+      <div class="card" id="personalBank">Bank: ₹0</div>
+      <div class="card" id="personalCredit">Credit: ₹0</div>
+      <div class="card" id="personalTotalExpense">Total Expense: ₹0</div>
+      <div class="card" id="personalTotalIncome">Total Income: ₹0</div>
+    </div>
+  </section>
+
+  <section class="chart-section">
+    <h2>Expense Categories</h2>
+    <canvas id="personalChart"></canvas>
+  </section>
+
+  <section class="history-section">
+    <h2>Transaction History</h2>
+    <input type="date" id="personalDateFilter" />
+    <button id="personalSearchBtn">Search</button>
+    <table id="personalTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Category</th>
+          <th>Type</th>
+          <th>Mode</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p>© 2025 Finance Tracker | Personal View</p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetchData("Personal");
+    });
+  </script>
+</body>
+</html>
