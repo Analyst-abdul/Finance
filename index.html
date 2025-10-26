@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finance Tracker - Main Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📊 Finance Tracker</h1>
+    <p>Main Dashboard – Data Entry & Analysis</p>
+  </header>
+
+  <section class="form-section">
+    <h2>Add Transaction</h2>
+    <form id="transactionForm">
+      <div class="form-row">
+        <label>Type:</label>
+        <select id="type" required>
+          <option value="">Select</option>
+          <option value="Personal">Personal</option>
+          <option value="Business">Business</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label>Transaction:</label>
+        <select id="transactionType" required>
+          <option value="">Select</option>
+          <option value="Income">Income</option>
+          <option value="Expense">Expense</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label>Category:</label>
+        <input type="text" id="category" placeholder="e.g. Rent, Salary" required />
+      </div>
+
+      <div class="form-row">
+        <label>Mode:</label>
+        <select id="mode" required>
+          <option value="">Select</option>
+          <option value="Cash">Cash</option>
+          <option value="Bank">Bank</option>
+          <option value="Credit">Credit</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label>Amount:</label>
+        <input type="number" id="amount" required />
+      </div>
+
+      <div class="form-row">
+        <label>Description:</label>
+        <input type="text" id="description" placeholder="Optional" />
+      </div>
+
+      <div class="form-row">
+        <button type="submit">Add Transaction</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="summary-section">
+    <h2>Summary</h2>
+    <div class="summary-grid">
+      <div class="card" id="cashBalance">Cash: ₹0</div>
+      <div class="card" id="bankBalance">Bank: ₹0</div>
+      <div class="card" id="creditBalance">Credit: ₹0</div>
+      <div class="card" id="totalExpense">Total Expense: ₹0</div>
+      <div class="card" id="totalIncome">Total Income: ₹0</div>
+    </div>
+  </section>
+
+  <section class="chart-section">
+    <h2>Expense Breakdown</h2>
+    <canvas id="expenseChart"></canvas>
+  </section>
+
+  <footer>
+    <p>© 2025 Finance Tracker | JAS Motors</p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/charts.js"></script>
+</body>
+</html>
